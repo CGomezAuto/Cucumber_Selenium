@@ -1,7 +1,6 @@
 package utility;
 
 import java.io.FileInputStream;
-import java.util.Locale;
 import java.util.Properties;
 
 public class FetchConfigProperties {
