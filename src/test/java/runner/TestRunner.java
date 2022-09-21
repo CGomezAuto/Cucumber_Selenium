@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
                 "pretty:target/cucumber-report/cucumber-pretty.txt,",
                 "junit:target/cucumber-report/cucumber-results.xml,",
                 "json:target/cucumber-report/cucumber.json"},
-        tags = "")
+        tags = "@Este")
 
 public class TestRunner {
 
