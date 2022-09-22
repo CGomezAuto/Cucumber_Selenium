@@ -2,7 +2,9 @@ package stepdefinitions;
 
 import base.DriverInstance;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import pages.Elements;
 import pages.Home;
 import pages.TextBoxForm;
@@ -22,13 +24,19 @@ public class TextBox extends DriverInstance {
     }
 
     @When("The user fills out and submits the Text box form with {string} & {string} & {string} & {string}")
-    public void theUserFillsOutAndSubmitsTheTextBoxFormWith(String fullName, String email, String crrntAddrss, String permntAddrss) throws Exception {
+    public void theUserFillsOutAndSubmitsTheTextBoxFormWith(String fullName, String email, String crrntAddrss, String permntAddrss) {
         textBoxForm = new TextBoxForm(driver);
-        textBoxForm.inputFullNameText(fullName);
-        textBoxForm.inputEmailText(email);
-        textBoxForm.inputCurrentAddressText(crrntAddrss);
-        textBoxForm.inputPermanentAddressText(permntAddrss);
+        textBoxForm.fillForm(fullName, email, crrntAddrss, permntAddrss);
         textBoxForm.submitForm();
-        //assert strings fullName equals to waits de getText de la respuesta
     }
+
+    @Then("The user checks the submit response is the same as the information inputted {string} & {string} & {string} & {string}")
+    public void theUserChecksTheSubmitResponseIsTheSameAsTheInformationInputted(String fullName, String email, String crrntAddrss, String permntAddrss) {
+        Assert.assertEquals("Name:" + fullName, textBoxForm.getFullName());
+        Assert.assertEquals("Email:" + email, textBoxForm.getEmail());
+        Assert.assertEquals("Current Address :" + crrntAddrss, textBoxForm.getCurrntAddress());
+        Assert.assertEquals("Permananet Address :" + permntAddrss, textBoxForm.getPermanentAddress());
+        driver.quit();
+    }
+
 }

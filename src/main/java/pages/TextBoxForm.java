@@ -14,36 +14,50 @@ public class TextBoxForm {
         PageFactory.initElements(driver, this);
     }
 
-    /*@FindBy(xpath = "//input[@id='userName']")
-    WebElement fullNameInput;  */
     @FindBy(id = "userName")
-    WebElement fullNameInput;
+    WebElement fullNameTxtBx;
     @FindBy(id = "userEmail")
-    WebElement emailInput;
+    WebElement emailTxtBx;
     @FindBy(id = "currentAddress")
-    WebElement currentAddrsInput;
+    WebElement currentAddrsTxtBx;
     @FindBy(id = "permanentAddress")
-    WebElement permanentAddrsInput;
+    WebElement permanentAddrsTxtBx;
     @FindBy(id = "submit")
     WebElement submitBtn;
+    @FindBy(id = "name")
+    WebElement responseFullNameLb;
+    @FindBy(id = "email")
+    WebElement responseEmailLb;
+    @FindBy(xpath = "//p[@id='currentAddress']")
+    WebElement responseCurrntAddressLb;
+    @FindBy(xpath = "//p[@id='permanentAddress']")
+    WebElement responsePermanentAddressLb;
 
-    public void inputFullNameText(String text) {
-        waits.putText(fullNameInput, text, 30);
-    }
-
-    public void inputEmailText(String text) {
-        waits.putText(emailInput, text, 30);
-    }
-
-    public void inputCurrentAddressText(String text) {
-        waits.putText(currentAddrsInput, text, 30);
-    }
-
-    public void inputPermanentAddressText(String text) {
-        waits.putText(permanentAddrsInput, text, 30);
+    public void fillForm(String fullName, String email, String currentAddress, String permanenAddress) {
+        waits.putText(fullNameTxtBx, fullName, 30);
+        waits.putText(emailTxtBx, email, 30);
+        waits.putText(currentAddrsTxtBx, currentAddress, 30);
+        waits.putText(permanentAddrsTxtBx, permanenAddress, 30);
     }
 
     public void submitForm() {
         waits.click(submitBtn, 30);
     }
+
+    public String getFullName() {
+        return waits.getText(responseFullNameLb, 30);
+    }
+
+    public String getEmail() {
+        return waits.getText(responseEmailLb, 30);
+    }
+
+    public String getCurrntAddress() {
+        return waits.getText(responseCurrntAddressLb, 30);
+    }
+
+    public String getPermanentAddress() {
+        return waits.getText(responsePermanentAddressLb, 30);
+    }
+
 }
