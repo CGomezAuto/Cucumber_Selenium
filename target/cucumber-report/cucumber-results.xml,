@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" time="0.026"/>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="10.66">
+    <testcase classname="Text Box" name="Input data on text fields and validate the submit response" time="10.366">
+        <system-out>
+            <![CDATA[Given The user navigates to Elements page and text box tab..................passed
+When The user fills out and submits the Text box form with "Carlos Gomez" & "Cg@gemail.com" & "Carrera 67 # 108 - 49" & "Carrera 71 # 120 - 47".passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>

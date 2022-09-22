@@ -2,6 +2,8 @@
 Feature: Text Box
 
   Scenario Outline: Input data on text fields and validate the submit response
-    Given The user navigates to the page
+    Given The user navigates to Elements page and text box tab
+    When The user fills out and submits the Text box form with "<fullName>" & "<email>" & "<currentAddress>" & "<permanentAddress>"
     Examples:
-      |  |
+      | fullName     | email         | currentAddress        | permanentAddress      |
+      | Carlos Gomez | Cg@gemail.com | Carrera 67 # 108 - 49 | Carrera 71 # 120 - 47 |

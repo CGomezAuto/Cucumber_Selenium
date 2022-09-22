@@ -1,0 +1,5 @@
+
+@Este
+Scenario Outline: Input data on text fields and validate the submit response                                                                      # src/test/java/features/TextBox.feature:9
+  Given The user navigates to Elements page and text box tab                                                                                      # stepdefinitions.TextBox.theUserNavigatesToElementsPageAndTextBoxTab()
+  When The user fills out and submits the Text box form with "Carlos Gomez" & "Cg@gemail.com" & "Carrera 67 # 108 - 49" & "Carrera 71 # 120 - 47" # stepdefinitions.TextBox.theUserFillsOutAndSubmitsTheTextBoxFormWith(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
